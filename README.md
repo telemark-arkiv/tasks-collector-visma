@@ -1,2 +1,2 @@
 # tasks-collector-compilo
-Service for collecting tasks from Compilo
+Service for collecting tasks from Visma
