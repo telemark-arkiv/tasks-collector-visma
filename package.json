@@ -1,0 +1,39 @@
+{
+  "name": "tasks-collector-visma",
+  "version": "1.0.0",
+  "description": "Collect a user's tasks from Visma HRM",
+  "license": "MIT",
+  "author": {
+    "name": "Jonas Enge",
+    "email": "jonas.enge@gmail.com",
+    "url": "https://github.com/maccyber"
+  },
+  "bugs": {
+    "url": "https://github.com/telemark/tasks-collector-visma/issues"
+  },
+  "homepage": "https://github.com/telemark/tasks-collector-visma",
+  "main": "index.js",
+  "engines": {
+    "node": ">=4.4.2"
+  },
+  "scripts": {
+    "test": "standard && tap --reporter=spec test/*.js",
+    "coverage": "tap test/*.js --coverage",
+    "coveralls": "tap --cov --coverage-report=lcov test/*.js && cat coverage/lcov.info | coveralls",
+    "start": "node service.js",
+    "setup": "npm install && node setup.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/telemark/tasks-collector-visma.git"
+  },
+  "devDependencies": {
+    "coveralls": "2.11.9",
+    "standard": "6.0.8",
+    "tap": "5.7.1"
+  },
+  "dependencies": {
+    "seneca": "^2.0.1",
+    "xml2js": "^0.4.16"
+  }
+}
