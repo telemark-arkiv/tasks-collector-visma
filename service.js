@@ -1,33 +1,35 @@
 'use strict'
 
-var seneca = require('seneca')()
-var pkg = require('./package.json')
-var config = require('./config')
-var getFormatedTasks = require('./lib/getFormatedTasks')
+var Seneca = require('seneca')
+var Mesh = require('seneca-mesh')
+var Visma = require('./lib/visma.js')
+var envs = process.env
 
-seneca.add({ cmd: 'collect-tasks' }, function (args, callback) {
-  var options = {
-    username: config.username,
-    password: config.password,
-    host: config.host,
-    port: config.port,
-    path: config.path,
-    user: args.user
+var options = {
+  seneca: {
+    tag: envs.TASKS_COLLECTOR_VISMA_TAG || 'tasks-collector-visma'
+  },
+  mesh: {
+    auto: true,
+    listen: [
+      {pin: 'cmd:collect-tasks, type:user', model: 'observe'}
+    ]
+  },
+  visma: {
+    url: envs.TASKS_COLLECTOR_COMPILO_URL || 'http://visma.no'
+  },
+  isolated: {
+    host: envs.TASKS_COLLECTOR_VISMA_HOST || 'localhost',
+    port: envs.TASKS_COLLECTOR_VISMA_PORT || 8000
   }
+}
 
-  getFormatedTasks(options, function (err, data) {
-    var result = {
-      id: pkg.name,
-      version: pkg.version,
-      timestamp: new Date().getTime(),
-      user: args.user,
-      results: data
-    }
-    if (err) {
-      callback(err)
-    }
-    callback(null, result)
-  })
-})
+var Service = Seneca(options.seneca)
 
-seneca.listen()
+if (envs.TASKS_COLLECTOR_VISMA_ISOLATED) {
+  Service.listen(options.isolated)
+} else {
+  Service.use(Mesh, options.mesh)
+}
+
+Service.use(Visma, options.visma)
