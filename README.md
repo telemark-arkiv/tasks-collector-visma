@@ -1,2 +1,38 @@
 # tasks-collector-visma
 Service for collecting tasks from Visma
+
+## Inbound messages
+This microservice listens for the following messages
+
+
+- ```{cmd: 'collect-tasks', type: 'user'}```
+
+## Outbound messages
+This microservice emits the following messages
+
+- ```{info: 'tasks', type:'user'}```
+
+## Docker
+Build the image
+
+```
+$ docker build -t tasks-collector-visma .
+```
+
+Start
+
+```
+$ docker run -d --net host --name tasks-collector-visma tasks-collector-visma
+```
+
+From hub.docker.com
+
+```
+$ docker run -d --net host --name tasks-collector-visma telemark/tasks-collector-visma
+```
+
+Call the service
+
+```
+$ curl -d '{"cmd":"collect-tasks", "type": "user", "user":"enge"}' -v http://192.168.99.100:8000/act
+```
