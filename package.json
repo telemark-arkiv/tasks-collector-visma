@@ -41,6 +41,7 @@
   },
   "dependencies": {
     "seneca": "^2.0.1",
+    "seneca-mesh": "0.7.0",
     "xml2js": "^0.4.16"
   }
 }
