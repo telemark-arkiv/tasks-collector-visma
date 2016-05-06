@@ -16,7 +16,7 @@ var options = {
     ]
   },
   visma: {
-    url: envs.TASKS_COLLECTOR_COMPILO_URL || 'http://visma.no'
+    url: envs.TASKS_COLLECTOR_VISMA_URL || 'http://visma.no'
   },
   isolated: {
     host: envs.TASKS_COLLECTOR_VISMA_HOST || 'localhost',
