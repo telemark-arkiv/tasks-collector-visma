@@ -1,6 +1,6 @@
 {
   "name": "tasks-collector-visma",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "description": "Collect a user's tasks from Visma HRM",
   "license": "MIT",
   "author": {
@@ -21,7 +21,7 @@
   "homepage": "https://github.com/telemark/tasks-collector-visma",
   "main": "index.js",
   "engines": {
-    "node": ">=4.4.2"
+    "node": ">=4.4.4"
   },
   "scripts": {
     "test": "standard && tap --reporter=spec test/*.js",
