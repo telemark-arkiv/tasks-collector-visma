@@ -21,7 +21,7 @@
   "homepage": "https://github.com/telemark/tasks-collector-visma",
   "main": "index.js",
   "engines": {
-    "node": ">=4.6.0"
+    "node": ">=4.7.0"
   },
   "scripts": {
     "test": "standard && nsp check && tap --reporter=spec test/**/*.js",
