@@ -27,15 +27,5 @@ WORKDIR "/src"
 # Install dependencies
 RUN npm install --production
 
-# Env variables
-ENV TASKS_COLLECTOR_VISMA_TAG tasks-collector-visma
-ENV TASKS_COLLECTOR_VISMA_HOST localhost
-ENV TASKS_COLLECTOR_VISMA_PORT 8000
-ENV VISMA_USERNAME user
-ENV VISMA_PASSWORD password
-ENV VISMA_HOST hostname
-ENV VISMA_PORT 8290
-ENV VISMA_PATH /hrm_ws/secure/tasks/username/
-
 # Startup
 CMD ["node", "service.js", "--seneca-log=type:act"]
