@@ -1,11 +1,11 @@
 'use strict'
 
-var Seneca = require('seneca')
-var Mesh = require('seneca-mesh')
-var Visma = require('./lib/visma.js')
-var envs = process.env
+const Seneca = require('seneca')
+const Mesh = require('seneca-mesh')
+const Visma = require('./lib/visma.js')
+const envs = process.env
 
-var options = {
+const options = {
   seneca: {
     log: 'silent',
     tag: envs.TASKS_COLLECTOR_VISMA_TAG || 'tasks-collector-visma'
@@ -25,7 +25,7 @@ var options = {
   }
 }
 
-var Service = Seneca(options.seneca)
+const Service = Seneca(options.seneca)
 
 if (envs.TASKS_COLLECTOR_VISMA_ISOLATED) {
   Service.listen(options.isolated)
