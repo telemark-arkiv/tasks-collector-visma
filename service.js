@@ -1,5 +1,6 @@
 'use strict'
 
+const legacyLogger = require('seneca-legacy-logger')
 const Seneca = require('seneca')
 const Mesh = require('seneca-mesh')
 const Visma = require('./lib/visma.js')
@@ -7,7 +8,9 @@ const envs = process.env
 
 const options = {
   seneca: {
-    log: 'silent',
+    internal: {
+      logger: legacyLogger
+    },
     tag: envs.TASKS_COLLECTOR_VISMA_TAG || 'tasks-collector-visma'
   },
   mesh: {
