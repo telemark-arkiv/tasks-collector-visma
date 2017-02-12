@@ -1,6 +1,8 @@
 [![Build Status](https://travis-ci.org/telemark/tasks-collector-visma.svg?branch=master)](https://travis-ci.org/telemark/tasks-collector-visma)
 [![js-standard-style](https://img.shields.io/badge/code%20style-standard-brightgreen.svg?style=flat)](https://github.com/feross/standard)
 # tasks-collector-visma
+
+[![Greenkeeper badge](https://badges.greenkeeper.io/telemark/tasks-collector-visma.svg)](https://greenkeeper.io/)
 Service for collecting tasks from Visma
 
 ## Inbound messages
