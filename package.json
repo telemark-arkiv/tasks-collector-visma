@@ -3,6 +3,7 @@
   "version": "2.0.12",
   "description": "Collect a user's tasks from Visma HRM",
   "license": "MIT",
+  "private": true,
   "author": {
     "name": "Jonas Enge",
     "email": "jonas.enge@gmail.com",
