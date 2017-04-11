@@ -1,6 +1,6 @@
 {
   "name": "tasks-collector-visma",
-  "version": "2.0.15",
+  "version": "2.0.16",
   "description": "Collect a user's tasks from Visma HRM",
   "license": "MIT",
   "private": true,
@@ -40,7 +40,7 @@
   "devDependencies": {
     "coveralls": "2.11.16",
     "nsp": "2.6.2",
-    "standard": "10.0.1",
+    "standard": "8.6.0",
     "tap": "10.3.2"
   },
   "dependencies": {
