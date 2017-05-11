@@ -1,6 +1,6 @@
 {
   "name": "tasks-collector-visma",
-  "version": "2.0.19",
+  "version": "2.0.20",
   "description": "Collect a user's tasks from Visma HRM",
   "license": "MIT",
   "private": true,
