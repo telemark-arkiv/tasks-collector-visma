@@ -45,7 +45,7 @@
   },
   "dependencies": {
     "seneca": "3.2.2",
-    "seneca-balance-client": "0.6.0",
+    "seneca-balance-client": "0.6.1",
     "seneca-legacy-logger": "0.1.0",
     "seneca-mesh": "0.10.0",
     "wreck": "12.2.2",
